@@ -1,0 +1,32 @@
+<div class="col-sm-auto col-md-auto col-lg-auto col-xl-auto" *ngIf="producto">
+    <div class="row">
+        <div class="col-sm-auto col-md-auto col-lg-auto col-xl-auto col-xxl-auto">
+            <img [src]="[producto.foto | noimage]" class="img-fluid" width="500px">
+        </div>
+        <div class="col-sm-auto col-md-auto col-lg-auto col-xl-auto col-xxl-auto py-4 card">
+            <div class="card-body">
+
+                <h2 class="text-primary">{{producto.nombre}}</h2>
+                <p class="text-muted">{{producto.descripcion}}</p>
+                <p class="text-muted">Marca: {{producto.marca.nombre}}</p>
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Color
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li *ngFor="let color of producto.propiedades[0].valores"><a class="dropdown-item">{{color.valor}}</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary dropdown-toggle ms-2" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                    Talle
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    <li *ngFor="let color of producto.propiedades[1].valores"><a class="dropdown-item">{{color.valor}}</a>
+                    </li>
+                </ul>
+                <hr>
+                <h2 class="">${{producto.precio}}</h2>
+            </div>
+
+        </div>
+    </div>
+</div>

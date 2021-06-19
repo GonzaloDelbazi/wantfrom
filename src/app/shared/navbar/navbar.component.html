@@ -1,26 +1,43 @@
-<nav class="navbar navbar-expand navbar">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
     <div class="container-fluid">
-        <a class="navbar-brand">
+        <a class="navbar-brand mx-4">
             <img src="./assets/img/wantfrom.jpg" width="50" height="50" alt="">
         </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Categorias</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" aria-current="page" id="categoriasDropdown" role="button" data-bs-toggle="dropdown">Categorias</a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriasDropdown">
+                            <li *ngFor="let categoria of categorias"><a class="dropdown-item text-primary" href="#">{{categoria.nombre}}</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ofertas</a>
+                        <a class="nav-link text-primary" href="#">Ofertas</a>
                     </li>
-                    <div class="col-12 d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="col-sm-12 col-md-12 d-flex">
+                        <input id="busqueda" class="form-control me-1" type="search" placeholder="Search" aria-label="Search" (keyup.enter)="buscar()">
+                        <button class="btn btn-outline-primary" type="submit" (click)="buscar()"><i class="fas fa-search"></i></button>
                     </div>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-user"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </nav>
+<hr>

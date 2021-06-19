@@ -9,3 +9,7 @@ a {
 input {
     width: 100%;
 }
+
+hr {
+    border: 1px solid rgb(0, 55, 117);
+}
